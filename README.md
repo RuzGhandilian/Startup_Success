@@ -6,18 +6,20 @@ The repository provides dataset describing 472 startups and their founders as we
 
 *The objective of the analysis is to identify and explain driving factors behind startup **success** or **failure**.* 
 
+### Instructions
+
 For running the pipeline, use python to run `__main__.py` script. 
 
 The repository also contains `Preprocessing.py`, `Model.py`, `Pipeline.py` python scripts and Jupyter Notebook `EDA.ipynb` that showcase EDA of the model.
 
-## `Preprocessing.py` Module
+### `Preprocessing.py` Module
 
 - **Missing Values Handling:** Replaces 'No Info' with NaN and fills missing values in categorical columns with the mode.
 - **Numerical Conversion:** Converts object columns to numeric where possible.
 - **Standardization:** Standardizes numerical variables using StandardScaler.
 - **One-Hot Encoding:** Converts categorical variables into binary vectors using OneHotEncoder.
 
-## `Model.py` Module
+### `Model.py` Module
 
 This module defines a `Model` class for training, evaluating, and displaying results of a Balanced Random Forest Classifier. I selected the Balanced Random Forest Classifier for its ability to handle the dataset's imbalanced classes and high-dimensional features effectively. Despite testing various models, this one consistently outperformed the others. Hyperparameter tuning was conducted to optimize its performance further.
 
