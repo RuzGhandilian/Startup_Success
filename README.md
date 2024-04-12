@@ -23,6 +23,7 @@ The repository also contains `Preprocessing.py`, `Model.py`, `Pipeline.py` pytho
 
 This module defines a `Model` class for training, evaluating, and displaying results of a Balanced Random Forest Classifier. I selected the Balanced Random Forest Classifier for its ability to handle the dataset's imbalanced classes and high-dimensional features effectively. Despite testing various models, this one consistently outperformed the others. Hyperparameter tuning was conducted to optimize its performance further.
 
+
 Here is the best classification report reached using BalancedRandomForestClassifier which handled data imbalance we have
 ```
 Classification Report:
