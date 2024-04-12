@@ -69,3 +69,5 @@ class Model:
         plt.title('ROC Curve')
         plt.legend()
         plt.show()
+
+

@@ -2,6 +2,9 @@ from Preprocessing import Preprocessing
 from Model import Model
 from sklearn.model_selection import train_test_split
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 class Pipeline:
@@ -46,3 +49,17 @@ class Pipeline:
         model.evaluate_model()
         model.display_results()
         model.plot_roc_curve()
+
+        # Evaluate Feature Importancies
+        feature_importances = model.feature_importances_
+        importance_df = pd.DataFrame({'Feature': self.X_train.columns, 'Importance': feature_importances})
+        importance_df = importance_df.sort_values(by='Importance', ascending=False)
+        top_features = importance_df.head(10)
+
+        # Visualize the feature importances
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x='Importance', y='Feature', data=top_features)
+        plt.title('Top Features Contributing to Success or Failure')
+        plt.xlabel('Importance')
+        plt.ylabel('Feature')
+        plt.show()
